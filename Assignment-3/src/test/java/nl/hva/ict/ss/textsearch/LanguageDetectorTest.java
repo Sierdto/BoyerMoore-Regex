@@ -16,8 +16,6 @@ public class LanguageDetectorTest {
         detector = new LanguageDetector(getClass().getResourceAsStream("/edu/princeton/cs/algs4/Huffman.java"));
     }
 
-    // Add your tests here. They are allowed  to NOT use assertXxxx... :-)
-
     @Test
     public void testJavadocRemoval() {
        detector.javadocDetector();
@@ -37,8 +35,8 @@ public class LanguageDetectorTest {
     public void TestIfLanguageCanBeCompared(){
         detector.detectFrequencyDistribution();
         System.out.println("Percentage of English in the context: ");
-        detector.callculateLanguage(ENGLISH, "English");
+        detector.calculateLanguage(ENGLISH, "English");
         System.out.println("Percentage of Dutch in the context: ");
-        detector.callculateLanguage(DUTCH, "Dutch");
+        detector.calculateLanguage(DUTCH, "Dutch");
     }
 }

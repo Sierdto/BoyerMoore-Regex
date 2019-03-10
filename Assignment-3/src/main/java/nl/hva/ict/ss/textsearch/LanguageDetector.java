@@ -110,12 +110,13 @@ public class LanguageDetector {
         System.out.println(characterCounter + "\n");
     }
 
-    void callculateLanguage(char[] mostUsedCharacters, String language) {
+    void calculateLanguage(char[] mostUsedCharacters, String language) {
 
         //sort the numchars on value
         Map<Character, Integer> sortedByValues = characterCounter.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+				
         // only values are in the sorted Map, make it a array for easier comparison
         Object[] di = sortedByValues.values().toArray();
 
